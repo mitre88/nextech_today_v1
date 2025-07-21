@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct nextech_today_v1App: App {
+    @State private var showWelcome = true
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if showWelcome {
+                WelcomeView(showWelcome: $showWelcome)
+            } else {
+                ContentView()
+            }
         }
     }
 }
